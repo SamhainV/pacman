@@ -223,6 +223,33 @@ void fill_buffer(UintDEP *src, UintDEP *dest)
     /*   memcpy32(dest, src, BYTES); */
 }
 
+
+// Creado por chatGPT
+void getsprite(SDL_Surface *srf, SDL_Rect *rect, UintDEP *dest)
+{
+    Uint8 *pixels = (Uint8 *)srf->pixels;
+    int bytes_per_pixel = srf->format->BytesPerPixel;
+    int pitch = srf->pitch;
+    UintDEP *ptrdest = dest;
+
+    if (SDL_LockSurface(srf) == 0)
+    {
+        for (int y = 0; y < rect->h; y++) {
+            for (int x = 0; x < rect->w; x++) {
+                // Posición en el buffer original
+                Uint8 *p = pixels + (rect->y + y) * pitch + (rect->x + x) * bytes_per_pixel;
+
+                // Leer pixel según formato (asumiendo UintDEP == Uint32 aquí)
+                UintDEP pixel;
+                memcpy(&pixel, p, sizeof(UintDEP));  // Evita problemas de alineación
+                *(ptrdest++) = pixel;
+            }
+        }
+        SDL_UnlockSurface(srf);
+    }
+}
+
+/* Original
 void getsprite(SDL_Surface *srf, SDL_Rect *rect, UintDEP *dest)
 {
     SDL_Rect *rtmp = rect;
@@ -238,6 +265,7 @@ void getsprite(SDL_Surface *srf, SDL_Rect *rect, UintDEP *dest)
     }
     SDL_UnlockSurface(srf);
 }
+*/
 
 void *memcpy32(void *dest, const void *src, size_t n)
 {
