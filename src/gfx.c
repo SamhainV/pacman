@@ -128,6 +128,8 @@ SDL_Surface *LoadImage(char *datafile, int transparent)
     return (surface);
 }
 
+
+/*
 void putico(int x, int y, UintDEP *source, UintDEP *dest, int tx, int ty)
 {
     int sy, sx;
@@ -136,6 +138,19 @@ void putico(int x, int y, UintDEP *source, UintDEP *dest, int tx, int ty)
         for (sx = 0; sx < tx; sx++)
             dest[(sx + x) + (sy + y) * 320] = source[sx + sy * tx];
 }
+*/
+void putico(int x, int y, UintDEP *source, UintDEP *dest, int tx, int ty)
+{
+    UintDEP *src_line = source;
+    UintDEP *dst_line = dest + y * 320 + x;
+
+    for (int sy = 0; sy < ty; sy++) {
+        memcpy(dst_line, src_line, tx * sizeof(UintDEP));
+        src_line += tx;
+        dst_line += 320;
+    }
+}
+
 
 void TimerStart(void (*handler)(int), int frecuencia)
 {
