@@ -6,12 +6,12 @@
 #define COMENZAR 2
 #define TRUE 1
 #define FALSE 0
-#define COOR_X  55 /* Define coordenadas del array ¢ circuito en pantalla */
-#define COOR_Y   2 /* Define coordenadas del array ¢ circuito en pantalla */
+#define COOR_X  55 /* Define coordenadas del array ï¿½ circuito en pantalla */
+#define COOR_Y   2 /* Define coordenadas del array ï¿½ circuito en pantalla */
 /* En realidad es 31 usamos 32 para que el desplazamiento sea << 5 */
-#define MAXX_A 32 /* M ximo tama¤o X del array + 2 bordes */
-#define MAXY_A 26 /* M ximo tama¤o Y del array + 2 bordes */
-#define ESCALA 8  /* Separaci¢n entre puntos en medidas de array */
+#define MAXX_A 32 /* Mï¿½ximo tamaï¿½o X del array + 2 bordes */
+#define MAXY_A 26 /* Mï¿½ximo tamaï¿½o Y del array + 2 bordes */
+#define ESCALA 8  /* Separaciï¿½n entre puntos en medidas de array */
 #define ARRIBA 200
 #define ABAJO  208
 #define DERECHA 205
@@ -32,7 +32,7 @@
 #define SIRENAS 1
 #define SILENCIO 2
 
-enum CODIGOS  {  /* C¢digos para el array */
+enum CODIGOS  {  /* Cï¿½digos para el array */
   C = 1, /* Circuito   */
   N = 2, /* Nada */
   J = 3, /* Camino pasado */

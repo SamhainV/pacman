@@ -40,7 +40,7 @@ int menu_opciones(int value) {
         200, 131, 69, 14, /* Gipon[69*14]; */
         69, 157, 69, 12, /* gautxori[69*12]; */
         200, 157, 62, 12, /* chamber[62*12]; */
-        74, 185, 171, 16 /* Press_space[171*16]; */
+        74, 180, 171, 16 /* Press_space[171*16]; */
     };
     int iport = 0;
 
