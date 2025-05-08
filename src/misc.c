@@ -99,9 +99,9 @@ int sprites_rects[MAX_RECT] =
     50, 113, 14, 14,  // gris2der
     /**********/
     112, 170, 10, 10, // asusta
-    173, 24, 10, 5,   // ojos
-    174, 172, 14, 14, // miedo
-    220, 172, 14, 14, // miedo2
+    81, 123, 10, 5,   // ojos
+    80, 139, 14, 14, // miedo
+    80, 160, 14, 14, // miedo2
     /**********/
     72, 4, 150, 32,   // Pacman Rotulo
     74, 38, 243, 21,  // character/nickname
@@ -177,12 +177,12 @@ void writef(int col, int row, UintDEP *where, char *format, ...)
   *(output + _width) = 0;
   if ((len = strlen(output)) < _width)
     memset(&output[len], ' ', _width - len);
-  /* paso de poner el siguiente codigo en una funci¢n */
-  /* esta funci¢n tarda demasiado tiempo y no quiero gastar m s */
-  /* llamando a una funci¢n */
+  /* paso de poner el siguiente codigo en una funciï¿½n */
+  /* esta funciï¿½n tarda demasiado tiempo y no quiero gastar mï¿½s */
+  /* llamando a una funciï¿½n */
   
   /* Analizaremos la cadena empezando por el final e iremos escribiendo */
-  /* los n£meros que vayan apareciendo */
+  /* los nï¿½meros que vayan apareciendo */
   itemp = strlen(output);
   for (i = itemp; i >= 0; i--) {
     switch(output[i]) {
@@ -459,7 +459,7 @@ void inicializa_structuras(struct pcman *pc, struct fantasmas *fan, int value)
 
 
 /*
-  Esta funci¢n es llamada cuando nos
+  Esta funciï¿½n es llamada cuando nos
   comemos todos los puntos de un circuito.
 */
 
@@ -475,7 +475,7 @@ void stargame(struct fantasmas *fan, struct pcman *pc, int value)
     copyarray();
 
   /* Pone primer premio en pantalla : */
-  /* El bast¢n */
+  /* El bastï¿½n */
   inicializa_structuras(pc, fan, value);
 
   tablero = LoadImage("data/tablero.bmp", 0);
@@ -670,14 +670,14 @@ int teclado(void)
 	  }
 	  
 	  /*
-	    Calculo del tiempo que los fantasmas est n asustados
-	    1§ - nivel  0 15 segundos 15 * 18.2 = 273
-	    2§ - nivel  1 11 segundos 11 * 18.2 = 198
-	    3§ - nivel  2  9 segundos  9 * 18.2 = 162
-	    4§ - nivel  3  7 segundos  7 * 18.2 = 126
-	    5§ - nivel  4  5 segundos  5 * 18.2 =  90
-	    6§ - nivel  5  3 segundos  3 * 18.2 =  54
-	    7§ - nivel  6  1 segundos  1 * 18.2 =  20
+	    Calculo del tiempo que los fantasmas estï¿½n asustados
+	    1ï¿½ - nivel  0 15 segundos 15 * 18.2 = 273
+	    2ï¿½ - nivel  1 11 segundos 11 * 18.2 = 198
+	    3ï¿½ - nivel  2  9 segundos  9 * 18.2 = 162
+	    4ï¿½ - nivel  3  7 segundos  7 * 18.2 = 126
+	    5ï¿½ - nivel  4  5 segundos  5 * 18.2 =  90
+	    6ï¿½ - nivel  5  3 segundos  3 * 18.2 =  54
+	    7ï¿½ - nivel  6  1 segundos  1 * 18.2 =  20
 	  */
 	  
 	  if (pc.estado_pcman == ENFADADO && CntStep >= pc.tiempo) {
