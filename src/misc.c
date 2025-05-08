@@ -164,6 +164,8 @@ void clearkbd(Uint8 *keys)
   keys[SDLK_UP] =   keys[SDLK_DOWN] =   keys[SDLK_RIGHT] =   keys[SDLK_LEFT] =   keys[SDLK_ESCAPE] =   keys[SDLK_SPACE] = 0;
 }
 
+
+
 void writef(int col, int row, UintDEP *where, char *format, ...)
 {
   va_list arg_ptr;
@@ -177,12 +179,12 @@ void writef(int col, int row, UintDEP *where, char *format, ...)
   *(output + _width) = 0;
   if ((len = strlen(output)) < _width)
     memset(&output[len], ' ', _width - len);
-  /* paso de poner el siguiente codigo en una funci�n */
-  /* esta funci�n tarda demasiado tiempo y no quiero gastar m�s */
-  /* llamando a una funci�n */
+  /* paso de poner el siguiente codigo en una función */
+  /* esta función tarda demasiado tiempo y no quiero gastar más */
+  /* llamando a una función */
   
   /* Analizaremos la cadena empezando por el final e iremos escribiendo */
-  /* los n�meros que vayan apareciendo */
+  /* los números que vayan apareciendo */
   itemp = strlen(output);
   for (i = itemp; i >= 0; i--) {
     switch(output[i]) {
