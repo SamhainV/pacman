@@ -9,7 +9,7 @@ INCLUDESRCDIR = src/include
 CFLAGS = -DLINUX -O3 -ggdb -ffast-math -funroll-loops -fomit-frame-pointer -Wall -pipe \
          -I$(INCLUDEDIR) -I$(INCLUDESRCDIR)
 
-LDFLAGS = -L/usr/lib -lSDL -lSDL_image -lm -lmikmod
+LDFLAGS = -L/usr/lib -lSDL -lSDL_image -lm -lmikmod -lglfw
 
 SRC = src/main.c \
       src/gfx.c \
@@ -23,7 +23,6 @@ OBJS = $(SRC:.c=.o)
 
 all: pacman
 
-# Regla general para compilar .o a partir de .c
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
