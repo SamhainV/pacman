@@ -1,7 +1,7 @@
 /*
     He visto en dos PCMAN's hechos en basic que una determinante para atrapar
   al PCMAN por parte de los FANTASMAS es mirar si el siguiente punto del
-  array est� vacio, � vale distinto del valor original lo que indica que el
+  array está vacio, ó vale distinto del valor original lo que indica que el
   PCMAN ya ha pasado por alli.
 */
 
