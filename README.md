@@ -1,6 +1,8 @@
 # Pacman (SDL 1.2 + Restauración de Resolución con xrandr)
 
-Este es un clon clásico de **Pacman** desarrollado en **C** usando  **SDL 1.2** . Incluye soporte para restaurar la resolución y la disposición de pantallas en sistemas Linux con  **X11** , gracias a `xrandr` y `GLFW`.
+Este es un clon clásico de **Pacman** desarrollado en **C** usando **SDL 1.2**. Incluye soporte para restaurar la resolución y la disposición de pantallas en sistemas Linux con **X11**, gracias a `xrandr` y `GLFW`.
+
+---
 
 ## 🧩 Características
 
@@ -44,7 +46,7 @@ Esto generará un ejecutable llamado `pacman`.
 
 ## ▶️ Ejecución
 
-Puedes ejecutar el juego en modo **pantalla completa** o  **ventana** :
+Puedes ejecutar el juego en modo **pantalla completa** o **ventana**:
 
 ```bash
 ./pacman -f   # Pantalla completa
@@ -55,13 +57,13 @@ Durante el arranque:
 
 * Se guarda la resolución del monitor principal con GLFW.
 * Se genera un script en `/tmp/restaurar_xrandr.sh` que almacena:
-  * La resolución de cada salida
-  * La posición relativa entre pantallas
-  * Cuál era la salida primaria
+  * La resolución de cada salida.
+  * La posición relativa entre pantallas.
+  * Cuál era la salida primaria.
 
 Al cerrar el juego:
 
-* Se ejecuta el script para restaurar el estado anterior del escritorio, incluyendo  **modo extendido entre pantallas** .
+* Se ejecuta el script para restaurar el estado anterior del escritorio, incluyendo **modo extendido entre pantallas**.
 
 ---
 
@@ -81,7 +83,7 @@ pacman/
 
 ## 🛠 Sugerencias y observaciones
 
-* La restauración puede tardar  **1-2 segundos** , especialmente si tienes varios monitores.
+* La restauración puede tardar **1-2 segundos**, especialmente si tienes varios monitores.
 * El script generado está en:
 
   ```
@@ -89,6 +91,26 @@ pacman/
   ```
 
   Puedes examinarlo o ejecutarlo manualmente si lo necesitas.
+
+---
+
+## 🚫 `.gitignore` personalizado
+
+Se ha modificado el archivo `.gitignore` para ignorar archivos temporales y objetos generados durante la compilación:
+
+```gitignore
+*.o     # Archivos objeto generados por el compilador
+*~      # Archivos temporales de editores como Emacs o Vim
+pacman  # El ejecutable generado tras compilar
+```
+
+### ¿Por qué estos archivos?
+
+- `*.o`: Son archivos intermedios que genera `gcc` al compilar. No es necesario almacenarlos en el repositorio.
+- `*~`: Archivos de respaldo creados automáticamente por editores de texto.
+- `pacman`: El binario final, que se puede regenerar fácilmente con `make`. No debe versionarse.
+
+Esto ayuda a mantener el repositorio **limpio**, evitando subir archivos que no aportan al código fuente y que pueden variar según el entorno del desarrollador.
 
 ---
 
@@ -104,4 +126,4 @@ Este proyecto es de libre distribución para fines educativos y personales.
 
 ---
 
-Disfrúta comiéndote fantasmas 👻 y restaurando tu resolución como un pro 😎.
+Disfruta comiéndote fantasmas 👻 y restaurando tu resolución como un pro 😎.
