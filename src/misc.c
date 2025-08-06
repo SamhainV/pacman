@@ -138,6 +138,23 @@ struct pcman pc;
 
 float inc_velocidad[4];
 float velocidades[14] = {
+  0.4,
+  0.4231,
+  0.4462,
+  0.4692,
+  0.4923,
+  0.5154,
+  0.5385,
+  0.5615,
+  0.5846,
+  0.6077,
+  0.6308,
+  0.6538,
+  0.6769,
+  0.7
+};
+/*
+float velocidades[14] = {
   0.4,      // Nivel  0
   0.5,      // Nivel  1
   0.6,      // Nivel  2
@@ -152,7 +169,7 @@ float velocidades[14] = {
   1.5,      // Nivel 11
   1.6,      // Nivel 12
   1.7       // Nivel 13
-};
+};*/
 float inc_velocidad_pc = 0.5;
 int busca_posiciones[4];
 int busca_posiciones_pc = TRUE;
